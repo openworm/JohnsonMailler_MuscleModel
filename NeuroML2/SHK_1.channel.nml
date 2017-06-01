@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd"
+    id="SHK_1">
+
+    <ionChannel id="SHK_1" conductance="10pS" type="ionChannelHH" species="k">
+
+        <notes>...</notes>
+
+        <gateHHtauInf id="n" instances="4">
+    
+            <timeCourse type="fixedTimeCourse" tau="190 ms"/>
+            <steadyState type="MuscleSigmoidVariable" rate="1" scale="6.859 mV" midpoint="1.237 mV"/>
+            
+        </gateHHtauInf>
+        
+    </ionChannel>
+    
+    
+    <ComponentType name="MuscleSigmoidVariable" 
+                   extends="baseVoltageDepVariable"
+                   description="Sigmoidal form for variable equation">
+    
+        <Parameter name="midpoint" dimension="voltage" />
+        <Parameter name="scale" dimension="voltage" />
+    
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 / (1 + exp((-(v-midpoint)) / scale))"/>
+        </Dynamics>
+    </ComponentType>
+
+</neuroml>

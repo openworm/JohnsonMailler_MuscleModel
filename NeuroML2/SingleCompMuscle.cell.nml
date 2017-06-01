@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta2.xsd"
+    id="SingleCompMuscleCell">
+    
+    <include href="EGL_19.channel.nml"/>
+    <include href="SHK_1.channel.nml"/>
+    <include href="Leak.channel.nml"/>
+    <include href="CaPool.nml"/>
+    
+
+    <cell id="SingleCompMuscleCell">
+
+        <notes>Only muscle cell body...</notes>
+
+        <morphology id="morphology_SingleCompMuscleCell">
+
+            <segment id="0" name="Body">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="10"/>
+                <distal x="0.0" y="0.0" z="230.3459" diameter="10"/>
+            </segment>
+
+        </morphology>
+
+
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+
+                <channelDensity condDensity="0.0172 mS_per_cm2" erev="-13 mV" id="Leak_all" ionChannel="Leak"  ion="non_specific"/>
+
+                <channelDensity condDensity="0.564 mS_per_cm2" erev="-70 mV" id="SHK_1_all" ionChannel="SHK_1"  ion="k"/>
+
+                <channelDensity condDensity="0.284 mS_per_cm2" erev="46 mV" id="EGL_19_all" ionChannel="EGL_19" ion="ca"/>
+
+                <spikeThresh value="0 mV"/>
+
+                <specificCapacitance value="1 uF_per_cm2"/>
+
+                <initMembPotential value="-75 mV"/>
+
+            </membraneProperties>
+
+            <intracellularProperties>
+                
+                <species id="ca" 
+                         ion="ca" 
+                         concentrationModel="CaPool" 
+                         initialConcentration="0 mM" 
+                         initialExtConcentration="2E-6 mol_per_cm3"/>  <!-- Ext conc is not used here -->
+
+                <resistivity value="0.1 kohm_cm"/>
+
+            </intracellularProperties>
+
+        </biophysicalProperties>
+
+    </cell>
+</neuroml>

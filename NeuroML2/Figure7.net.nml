@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" 
+         id="NeuronMuscle">
+
+
+    <include href="SingleCompMuscle.cell.nml"/>
+
+    
+    <pulseGenerator id="inj_current" delay="100ms" duration="1400ms" amplitude=".4nA"/>
+
+
+    <network id="net1">
+        
+        
+        <population id="muscle" component="SingleCompMuscleCell" type="populationList">
+            <instance id="0">
+                <location y="0" x="50" z="0"/>
+            </instance>
+        </population>
+        
+       
+        
+        <explicitInput input="inj_current" target="muscle/0/SingleCompMuscleCell"/>
+        
+    
+    </network>
+</neuroml>
