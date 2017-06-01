@@ -32,7 +32,7 @@
         <Parameter name="c" dimension="voltage" />
     
         <Dynamics>
-            <DerivedVariable name="x" dimension="none" exposure="x" value="1 - a * exp((-(v - b)*(v - b)) / (2 * c))"/>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 - a * exp((-(v - b)*(v - b)) / (c * c))"/>
         </Dynamics>
     </ComponentType>
 
