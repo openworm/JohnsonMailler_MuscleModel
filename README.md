@@ -1,5 +1,7 @@
 ## Johnson & Mailler Muscle Model
 
+**Work in progress!!**
+
 C. elegans muscle model from [Johnson & Mailler, Modeling Action Potentials of Body Wall Muscles in C. elegans: A Biologically Founded Computational Approach, BICOB 2015](http://searchdl.org/index.php/conference/downloadPDF/1102).
 
 Currently there is work on a conversion of this model to [NeuroML 2](/NeuroML2), which was begun by Ramin Hasani and David Lung. 
