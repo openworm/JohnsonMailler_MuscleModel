@@ -8,7 +8,7 @@
     <include href="SingleCompMuscle.cell.nml"/>
 
     
-    <pulseGenerator id="inj_current" delay="100ms" duration="1400ms" amplitude=".4nA"/>
+    <pulseGenerator id="inj_current" delay="100ms" duration="400ms" amplitude=".05nA"/>
 
 
     <network id="net1">

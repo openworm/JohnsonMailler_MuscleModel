@@ -38,7 +38,7 @@
 
                 <specificCapacitance value="1 uF_per_cm2"/>
 
-                <initMembPotential value="-75 mV"/>
+                <initMembPotential value="-28 mV"/>
 
             </membraneProperties>
 
