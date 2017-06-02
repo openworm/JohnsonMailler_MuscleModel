@@ -22,6 +22,17 @@
 
     </ionChannel>
 
+    <ComponentType name="MuscleSigmoidVariable" 
+                   extends="baseVoltageDepVariable"
+                   description="Sigmoidal form for variable equation">
+    
+        <Parameter name="midpoint" dimension="voltage" />
+        <Parameter name="scale" dimension="voltage" />
+    
+        <Dynamics>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 / (1 + exp((-(v-midpoint)) / scale))"/>
+        </Dynamics>
+    </ComponentType>
     
     <ComponentType name="MuscleSigmoidVariableCaInact" 
                    extends="baseVoltageDepVariable"
