@@ -1,0 +1,33 @@
+<Lems>
+
+
+    <!-- Specify which component to run -->
+    <Target component="sim1"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="SingleCompMuscleScaled.net.nml"/>
+
+
+    <Simulation id="sim1" length="1000ms" step="0.01ms" target="net1">
+
+        <Display id="d1" title="Voltage response (mV)" timeScale="1ms" xmin="-50" xmax="1050" ymin="-80" ymax="50">
+            <Line id="v" quantity="muscle[0]/v" scale="1mV"  color="#ffffff" timeScale="1ms"/>
+        </Display>
+
+        <Display id="d2" title="Rate variables (dimensionless)" timeScale="1ms" xmin="-50" xmax="1050" ymin="-0.1" ymax="1.1">
+
+            <Line id="EGL_19 m" quantity="muscle[0]/EGL_19/EGL_19/m/q" scale="1"  color="#ff00ff" timeScale="1ms"/>
+            <Line id="EGL_19 h" quantity="muscle[0]/EGL_19/EGL_19/h/q" scale="1"  color="#ff0000" timeScale="1ms"/>
+            <Line id="SHK_1 n" quantity="muscle[0]/SHK_1/SHK_1/n/q" scale="1"  color="#000000" timeScale="1ms"/>
+            
+        </Display>
+   
+
+    </Simulation>
+
+
+</Lems>

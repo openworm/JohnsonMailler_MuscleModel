@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta.xsd"
          id="EGL_19">
 
-    <ionChannel id="EGL_19" conductance="10pS" type="ionChannelHH" species="ca">
+    <ionChannel id="EGL_19" conductance="1pS" type="ionChannelHH" species="ca">
 
         <notes>EGL_19 channel from Johnson and Mailler, BICOB 2015</notes>
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta2.xsd"
+    id="SingleCompMuscleCellScaled">
+    
+    <include href="EGL_19.channel.nml"/>
+    <include href="SHK_1.channel.nml"/>
+    <include href="Leak.channel.nml"/>
+    
+
+    <pointCellCondBased id="SingleCompMuscleCellScaled" C=".1e6pF"  v0="-13.15mV" thresh="0mV">
+        
+        <channelPopulation id="Leak" ionChannel="Leak" number="17.2e6" erev="-13mV"/>
+        <channelPopulation id="SHK_1" ionChannel="SHK_1" number="564e6" erev="-70mV"/>
+        <channelPopulation id="EGL_19" ionChannel="EGL_19" number="284e6" erev="46mV"/>
+        
+    </pointCellCondBased>
+    
+    
+    <pulseGenerator id="inj_current" delay="0ms" duration="1000ms" amplitude="1uA"/>
+
+    <network id="net1">
+        
+        <population id="muscle" component="SingleCompMuscleCellScaled" size="1"/>
+        
+        <explicitInput input="inj_current" target="muscle[0]" destination="synapses"/>
+        
+    </network>
+    
+</neuroml>

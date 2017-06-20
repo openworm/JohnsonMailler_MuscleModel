@@ -6,6 +6,6 @@
 
     <notes>ChannelML file containing a single Channel description for a passive leak conductance</notes>
 
-    <ionChannel id="Leak" conductance="10pS" type="ionChannelPassive"/>
+    <ionChannel id="Leak" conductance="1pS" type="ionChannelPassive"/>
 
 </neuroml>
