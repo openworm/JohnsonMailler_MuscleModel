@@ -6,28 +6,16 @@
 
     <ionChannel id="SHK_1" conductance="10pS" type="ionChannelHH" species="k">
 
-        <notes>...</notes>
+        <notes>SHK_1 channel from Johnson and Mailler, BICOB 2015</notes>
 
         <gateHHtauInf id="n" instances="4">
     
             <timeCourse type="fixedTimeCourse" tau="190 ms"/>
-            <steadyState type="MuscleSigmoidVariable" rate="1" scale="6.859 mV" midpoint="1.237 mV"/>
+            <steadyState type="HHSigmoidVariable" rate="1" scale="6.859 mV" midpoint="1.237 mV"/>
             
         </gateHHtauInf>
         
     </ionChannel>
     
-    
-    <ComponentType name="MuscleSigmoidVariable" 
-                   extends="baseVoltageDepVariable"
-                   description="Sigmoidal form for variable equation">
-    
-        <Parameter name="midpoint" dimension="voltage" />
-        <Parameter name="scale" dimension="voltage" />
-    
-        <Dynamics>
-            <DerivedVariable name="x" dimension="none" exposure="x" value="1 / (1 + exp((-(v-midpoint)) / scale))"/>
-        </Dynamics>
-    </ComponentType>
 
 </neuroml>

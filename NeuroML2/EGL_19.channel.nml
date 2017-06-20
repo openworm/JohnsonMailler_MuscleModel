@@ -6,12 +6,12 @@
 
     <ionChannel id="EGL_19" conductance="10pS" type="ionChannelHH" species="ca">
 
-        <notes>...</notes>
+        <notes>EGL_19 channel from Johnson and Mailler, BICOB 2015</notes>
 
         <gateHHtauInf id="m" instances="2">
     
             <timeCourse type="fixedTimeCourse" tau="1 ms"/>
-            <steadyState type="MuscleSigmoidVariable" scale="4.5 mV" midpoint="6.7 mV"/>
+            <steadyState type="HHSigmoidVariable" rate="1" scale="4.5 mV" midpoint="6.7 mV"/>
     
         </gateHHtauInf>
     
@@ -21,18 +21,7 @@
         </gateHHtauInf>
 
     </ionChannel>
-
-    <ComponentType name="MuscleSigmoidVariable" 
-                   extends="baseVoltageDepVariable"
-                   description="Sigmoidal form for variable equation">
     
-        <Parameter name="midpoint" dimension="voltage" />
-        <Parameter name="scale" dimension="voltage" />
-    
-        <Dynamics>
-            <DerivedVariable name="x" dimension="none" exposure="x" value="1 / (1 + exp((-(v-midpoint)) / scale))"/>
-        </Dynamics>
-    </ComponentType>
     
     <ComponentType name="MuscleSigmoidVariableCaInact" 
                    extends="baseVoltageDepVariable"
@@ -43,7 +32,7 @@
         <Parameter name="c" dimension="voltage" />
     
         <Dynamics>
-            <DerivedVariable name="x" dimension="none" exposure="x" value="1 - a * exp((-(v - b)*(v - b)) / (c * c))"/>
+            <DerivedVariable name="x" dimension="none" exposure="x" value="1 - a * exp((-1 * (v - b)*(v - b)) / (c * c * 2))"/>
         </Dynamics>
     </ComponentType>
 

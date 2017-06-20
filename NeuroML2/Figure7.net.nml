@@ -7,12 +7,9 @@
 
     <include href="SingleCompMuscle.cell.nml"/>
 
-    
-    <pulseGenerator id="inj_current" delay="100ms" duration="400ms" amplitude=".05nA"/>
-
+    <pulseGenerator id="inj_current" delay="100ms" duration="1400ms" amplitude="350pA"/>
 
     <network id="net1">
-        
         
         <population id="muscle" component="SingleCompMuscleCell" type="populationList">
             <instance id="0">
@@ -20,10 +17,7 @@
             </instance>
         </population>
         
-       
-        
         <explicitInput input="inj_current" target="muscle/0/SingleCompMuscleCell"/>
         
-    
     </network>
 </neuroml>
