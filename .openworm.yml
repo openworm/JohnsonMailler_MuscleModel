@@ -1,0 +1,21 @@
+repo: openworm/JohnsonMailler_MuscleModel
+shortDescription: "Model of c.elegans muscle based on Johnson & Mailler, 2015"
+coordinator: p.gleeson@gmail.com
+documentation: "https://github.com/openworm/JohnsonMailler_MuscleModel/blob/master/README.md"
+inputs: 
+  - openworm/ChannelWorm
+keywords: 
+  - mathematical model
+  - conductance model
+  - muscles
+  - cells
+  - channels
+languages: 
+  - python
+members: 
+  - p.gleeson@gmail.com
+outputs: 
+  - openworm/c302
+parent: 
+  - openworm/OpenWorm
+tests: true
