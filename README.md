@@ -1,5 +1,7 @@
 ## Johnson & Mailler Muscle Model
 
+[![Continuous build using OMV](https://github.com/openworm/JohnsonMailler_MuscleModel/actions/workflows/omv-ci.yml/badge.svg)](https://github.com/openworm/JohnsonMailler_MuscleModel/actions/workflows/omv-ci.yml)
+
 **Work in progress!!**
 
 C. elegans muscle model from [Johnson & Mailler, Modeling Action Potentials of Body Wall Muscles in C. elegans: A Biologically Founded Computational Approach, BICOB 2015](http://searchdl.org/index.php/conference/downloadPDF/1102).
