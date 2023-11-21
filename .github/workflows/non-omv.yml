@@ -1,0 +1,34 @@
+name: Non OMV tests
+
+on:
+  push:
+    branches: [ master, development, experimental ]
+  pull_request:
+    branches: [ master, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:      
+      fail-fast: false
+      matrix:
+        python-version: [ 3.9 ]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version:  ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        pip install pyNeuroML
+        
+    - name: Run some examples
+      run: |
+        echo "Running non OMV tests..."
+        # Test channel analysis
+        cd NeuroML2
+        ./analyse_all.sh
