@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install pyNeuroML
+        pip install pyNeuroML pyelectro
         
     - name: Run some examples
       run: |
