@@ -11,3 +11,4 @@ Currently there is work on a conversion of this model to [NeuroML 2](/NeuroML2),
 This model is being investigated for inclusion in [c302](https://github.com/openworm/CElegansNeuroML/tree/master/CElegans/pythonScripts/c302) as part of the [OpenWorm project](http://www.openworm.org). 
 
 See [here](https://github.com/openworm/muscle_model/issues/63) for more discussion on C. elegans muscle modelling in the project.
+
